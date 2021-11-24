@@ -1,0 +1,3 @@
+create user mebelshop_user with password 'root' ;
+create database mebelshop_db owner mebelshop_user;
+py manage.py makemigratuions && py manage.py migrate

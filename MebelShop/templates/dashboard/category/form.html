@@ -1,0 +1,17 @@
+{% extends "dashboard/base.html" %}
+{% load static %}
+{% block content %}
+{% load bootstrap4 %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+
+        {% if edit %}
+        Name: <input type="text" value="{{ edit_one.name }}"><br>
+        Slug: <input type="text" value="{{ edit_one.slug }}">
+        {% else %}
+        {{ form.as_p }}
+        {% endif %}
+        <button type="submit" onclick="saved()">saqlash</button>
+    </form>
+{% endblock %}

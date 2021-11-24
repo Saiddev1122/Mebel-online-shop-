@@ -1,0 +1,22 @@
+{% extends "dashboard/base.html" %}
+{% load static %}
+{% block content %}
+{% load bootstrap4 %}
+      <ul style="list-style:none;">
+        {% for i in all %}
+                <a href="{% url 'detail_proimg' pk=i.id %}">
+                      <li>
+                            {{ i.product }}
+              </li>
+
+                </a>
+                 <a href="{% url 'delete_proimg' pk=i.id %}" style="margin-left: 10px;">
+                        <button>🗑delete</button>
+                </a>
+                <a href="{% url 'edit_proimg' pk=i.id %}" style="margin-left: 10px;">
+                <button>📝edit</button>
+                </a>
+          <br>
+        {% endfor %}
+     </ul>
+{% endblock %}
